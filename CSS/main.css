@@ -1,0 +1,325 @@
+:root{
+    --primary-color: #ffffff;
+    --secondary-color: #ff00ff;
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+    width: 100%;
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    position: relative;
+}
+
+.logo-container {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: var(--secondary-color);
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.banner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+}
+
+.menu {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #ffcc00;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    height: 50px;
+    place-items: center;
+    gap: 1rem;
+}
+
+.main-container .container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.main-container .container:hover {
+    background-color: var(--primary-color);
+    color: black;
+}
+
+.admission {
+    grid-column: 1 / 2;
+}
+
+.registrar {
+    grid-column: 2 / 3;
+}
+
+.library {
+    grid-column: 4 / 5;
+}
+
+.alumni {
+    grid-column: 5 / 6;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+}
+
+/* Mobile First - Base styles for mobile */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .menu ul {
+        flex-direction: row;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .logo-container {
+        width: 80px;
+        height: 80px;
+        top: 50%;
+    }
+    
+    .banner-container {
+        padding: 0 0.5rem;
+    }
+    
+    .main-container {
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .main-container .container {
+        height: 60px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+    }
+    
+    .admission {
+        grid-column: 1 / 2;
+    }
+    
+    .registrar {
+        grid-column: 2 / 3;
+    }
+    
+    .library {
+        grid-column: 1 / 2;
+    }
+    
+    .alumni {
+        grid-column: 2 / 3;
+    }
+    
+    footer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+}
+
+/* Small tablet styles */
+@media (min-width: 769px) and (max-width: 900px) {
+    .banner-container {
+        padding: 0 1rem;
+    }
+    
+    .menu ul {
+        gap: 1.5rem;
+    }
+    
+    .main-container {
+        grid-template-columns: repeat(2, 1fr);
+        height: 90px;
+        gap: 0.75rem;
+    }
+    
+    .admission {
+        grid-column: 1 / 2;
+    }
+    
+    .registrar {
+        grid-column: 2 / 3;
+    }
+    
+    .library {
+        grid-column: 1 / 2;
+    }
+    
+    .alumni {
+        grid-column: 2 / 3;
+    }
+    
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 901px) and (max-width: 1024px) {
+    .banner-container {
+        padding: 0 2rem;
+    }
+    
+    .menu ul {
+        gap: 1.5rem;
+    }
+    
+    .main-container {
+        grid-template-columns: repeat(2, 1fr);
+        height: 90px;
+        gap: 0.75rem;
+    }
+    
+    .admission {
+        grid-column: 1 / 2;
+    }
+    
+    .registrar {
+        grid-column: 2 / 3;
+    }
+    
+    .library {
+        grid-column: 1 / 2;
+    }
+    
+    .alumni {
+        grid-column: 2 / 3;
+    }
+    
+    footer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+    .banner-container {
+        padding: 0 3rem;
+    }
+    
+    .menu ul {
+        gap: 2.5rem;
+    }
+    
+    .main-container {
+        grid-template-columns: repeat(5, 1fr);
+        height: 50px;
+    }
+    
+    .admission {
+        grid-column: 1 / 2;
+    }
+    
+    .registrar {
+        grid-column: 2 / 3;
+    }
+    
+    .library {
+        grid-column: 4 / 5;
+    }
+    
+    .alumni {
+        grid-column: 5 / 6;
+    }
+    
+    footer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large desktop styles */
+@media (min-width: 1440px) {
+    .banner-container {
+        max-width: 1400px;
+    }
+    
+    .main-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    footer {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
