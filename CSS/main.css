@@ -183,7 +183,7 @@ footer {
 }
 
 /* Mobile First - Base styles for mobile */
-@media (max-width: 768px) {
+@media (max-width: 760px) {
     .navbar {
         display: flex;
         justify-content: space-between;
