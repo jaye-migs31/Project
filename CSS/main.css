@@ -1,6 +1,9 @@
 :root{
     --primary-color: #ffffff;
     --secondary-color: #ff00ff;
+    --secondary-color-dark: #ff00ff85;
+    --gradient-color: linear-gradient(45deg, #ff00ff, #800000);
+    --main-font: "Pirata One", system-ui;
 }
 
 /* Base styles */
@@ -23,6 +26,13 @@ header {
     background-color: var(--secondary-color);
     padding: 1rem 0;
     position: relative;
+}
+
+.title {
+    position: absolute; 
+    font-family: var(--main-font); 
+    color: var(--primary-color); 
+    left: 10px;
 }
 
 .logo-container {
@@ -114,6 +124,25 @@ header {
     color: black;
 }
 
+/* Call-to-action button inside the 3rd slide */
+.cta-button {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .cta-button:hover {
+    background: var(--secondary-color-dark);
+  }
+  
+
 .admission {
     grid-column: 1 / 2;
 }
@@ -132,8 +161,25 @@ header {
 
 footer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-items: center;
+    grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+    place-items: center;                     /* Centers the content inside the grid */
+    background: var(--gradient-color);
+    justify-items: center;                   /* Centers content horizontally */
+    align-items: center;                     /* Centers content vertically */
+}
+
+.copyright {
+    grid-column: 1;
+    font-family: var(--main-font);
+    color: var(--primary-color);
+}
+
+.footer-contacts {
+    grid-column: 2;
+}
+
+.socmed {
+    grid-column: 3;
 }
 
 /* Mobile First - Base styles for mobile */
@@ -149,6 +195,14 @@ footer {
         gap: 1rem;
         text-align: center;
     }
+
+    .title {
+        position: absolute;
+        left: 50%;
+        top: 170px;
+        transform: translateX(-50%);
+    }
+      
     
     .logo-container {
         width: 80px;
@@ -191,53 +245,68 @@ footer {
     
     footer {
         grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 1rem;
-    }
-}
-
-/* Small tablet styles */
-@media (min-width: 769px) and (max-width: 900px) {
-    .banner-container {
-        padding: 0 1rem;
-    }
-    
-    .menu ul {
         gap: 1.5rem;
+        padding: 2rem 1rem;
+        text-align: center;
     }
     
-    .main-container {
-        grid-template-columns: repeat(2, 1fr);
-        height: 90px;
-        gap: 0.75rem;
+    .copyright {
+        grid-column: 1;
+        font-size: 0.9rem;
+        font-family: var(--main-font);
+        color: var(--primary-color);
     }
     
-    .admission {
-        grid-column: 1 / 2;
+    .footer-contacts {
+        grid-column: 1;
     }
     
-    .registrar {
-        grid-column: 2 / 3;
+    .footer-contacts h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
     }
     
-    .library {
-        grid-column: 1 / 2;
+    .footer-contacts ul {
+        list-style: none;
+        font-size: 0.9rem;
+        color: var(--primary-color);
     }
     
-    .alumni {
-        grid-column: 2 / 3;
+    .socmed {
+        grid-column: 1;
     }
     
-    footer {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+    .socmed h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+    }
+    
+    .socmed a {
+        display: block;
+        margin: 0.5rem 0;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .socmed a:hover {
+        color: #ffcc00;
     }
 }
 
 /* Tablet styles */
-@media (min-width: 901px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .banner-container {
         padding: 0 2rem;
+    }
+
+    .title {
+        position: absolute;
+        left: 50%;
+        top: 60px;
+        transform: translateX(-50%);
     }
     
     .menu ul {
@@ -268,6 +337,55 @@ footer {
     
     footer {
         grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 2.5rem 2rem;
+        text-align: center;
+    }
+    
+    .copyright {
+        grid-column: 1;
+        font-size: 1rem;
+        font-family: var(--main-font);
+        color: var(--primary-color);
+    }
+    
+    .footer-contacts {
+        grid-column: 2;
+    }
+    
+    .footer-contacts h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+        color: var(--primary-color);
+    }
+    
+    .footer-contacts ul {
+        list-style: none;
+        font-size: 1rem;
+        color: var(--primary-color);
+    }
+    
+    .socmed {
+        grid-column: 3;
+    }
+    
+    .socmed h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+        color: var(--primary-color);
+    }
+    
+    .socmed a {
+        display: block;
+        margin: 0.75rem 0;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-size: 1rem;
+        transition: color 0.3s ease;
+    }
+    
+    .socmed a:hover {
+        color: #ffcc00;
     }
 }
 
@@ -304,22 +422,54 @@ footer {
     
     footer {
         grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Large desktop styles */
-@media (min-width: 1440px) {
-    .banner-container {
-        max-width: 1400px;
+        gap: 2.5rem;
+        padding: 3rem 3rem;
+        text-align: center;
     }
     
-    .main-container {
-        max-width: 1400px;
-        margin: 0 auto;
+    .copyright {
+        grid-column: 1;
+        font-size: 1.1rem;
+        font-family: var(--main-font);
+        color: var(--primary-color);
     }
     
-    footer {
-        max-width: 1400px;
-        margin: 0 auto;
+    .footer-contacts {
+        grid-column: 2;
+    }
+    
+    .footer-contacts h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+    }
+    
+    .footer-contacts ul {
+        list-style: none;
+        font-size: 1.1rem;
+        color: var(--primary-color);
+    }
+    
+    .socmed {
+        grid-column: 3;
+    }
+    
+    .socmed h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+    }
+    
+    .socmed a {
+        display: block;
+        margin: 1rem 0;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+    }
+    
+    .socmed a:hover {
+        color: #ffcc00;
     }
 }

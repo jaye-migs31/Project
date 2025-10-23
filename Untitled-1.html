@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revolving Card Deck</title>
+<style>
+  body {
+    background: radial-gradient(circle at center, #0b132b, #1c2541);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+  }
+
+  .deck {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+  }
+
+  .card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    color: #111;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+
+  /* Slight offsets for stack look */
+  .card:nth-child(1) { transform: translateX(0px) translateY(10px) scale(1); z-index: 3; }
+  .card:nth-child(2) { transform: translateX(20px) translateY(5px) scale(1); z-index: 2; opacity: 0.9; }
+  .card:nth-child(3) { transform: translateX(-20px) scale(1); z-index: 1; opacity: 0.7; }
+
+  @keyframes moveToBack {
+    0% { transform: translateX(0px) translateY(10) scale(1); opacity: 1; z-index: 3; }
+    40% { transform: translateX(50px) scale(1); opacity: 0.8; }
+    100% { transform: translateX(-20px) scale(1); opacity: 0.6; z-index: 0; }
+  }
+
+  .move-back {
+    animation: moveToBack 0.6s ease forwards;
+  }
+
+  .button {
+    margin-top: 30px;
+    padding: 10px 25px;
+    background: #3a86ff;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .button:hover {
+    background: #4361ee;
+  }
+</style>
+</head>
+<body>
+  <div class="deck" id="deck">
+    <div class="card">A♠</div>
+    <div class="card">K♥</div>
+    <div class="card">Q♣</div>
+  </div>
+  <button class="button" id="nextBtn">Next</button>
+
+  <script>
+    const deck = document.getElementById("deck");
+    const nextBtn = document.getElementById("nextBtn");
+
+    nextBtn.addEventListener("click", () => {
+      const cards = deck.querySelectorAll(".card");
+      if (cards.length === 0) return;
+
+      const topCard = cards[0];
+      topCard.classList.add("move-back");
+
+      topCard.addEventListener("animationend", () => {
+        topCard.classList.remove("move-back");
+        deck.appendChild(topCard); // send to back
+      }, { once: true });
+    });
+  </script>
+</body>
+</html>
