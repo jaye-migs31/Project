@@ -4,6 +4,7 @@
     --secondary-color-dark: #ff00ff85;
     --gradient-color: linear-gradient(45deg, #ff00ff, #800000);
     --main-font: "Pirata One", system-ui;
+    --background: url("https://svfc-edu.com/public/img/facilities/laboratory/img_7.jpg")
 }
 
 /* Base styles */
@@ -14,12 +15,13 @@
 }
 
 body {
-    background-color: var(--primary-color);
-    color: #333;
+    background: var(--background);
+    color: var(--primary-color);
     font-family: Arial, sans-serif;
     line-height: 1.6;
-}
+    background-attachment: fixed;
 
+}
 /* Header and Navigation */
 header {
     width: 100%;
@@ -219,12 +221,13 @@ footer {
         height: auto;
         gap: 0.5rem;
         padding: 1rem;
+
     }
     
     .main-container .container {
         height: 60px;
         border-radius: 25px;
-        font-size: 0.9rem;
+        font-size: smaller;
     }
     
     .admission {
