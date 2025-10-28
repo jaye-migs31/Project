@@ -20,7 +20,6 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-attachment: fixed;
-
 }
 /* Header and Navigation */
 header {
@@ -159,6 +158,15 @@ header {
 
 .alumni {
     grid-column: 5 / 6;
+}
+
+.yt {
+    max-width: 80vw;
+    width: 100%;
+    height: auto;
+    border-style: solid;
+    border-color: var(--secondary-color);
+    place-self: center;
 }
 
 footer {
