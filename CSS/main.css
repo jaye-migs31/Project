@@ -186,6 +186,9 @@ footer {
 
 /* Mobile First - Base styles for mobile */
 @media (max-width: 760px) {
+    header {
+        font-size: small;
+    }
     .navbar {
         display: flex;
         justify-content: space-between;

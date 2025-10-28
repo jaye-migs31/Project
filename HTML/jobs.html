@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVFC Jobs</title>
     <link rel="stylesheet" href="../CSS/main.css">
-    <link rel="stylesheet" href="../CSS/carrousel.css">
+    <link rel="stylesheet" href="../CSS/jobs.css">
+    <link rel="stylesheet" href="../CSS/reg.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
@@ -50,7 +51,110 @@
         </div>
     </header>
 
+    <br>
+    <br>
 
+    <h1 style="text-align: center; font-family: var(--main-font);">Jobs</h1>
+    <p style="padding: 0 20px 0 20px;">Be part of a vibrant community where passion meets purpose. At St. Vincent De Ferrer Camarin, we value innovation, service, and growth. Work alongside dedicated professionals in shaping young minds, while enriching your career in a supportive, faith-centered environment. Your journey starts here!</p>
+    
+    <section class="job-section">
+        <a class="openBtn" data-target="panel1">
+            <h2>Alternative Learning Support Teacher</h2>
+            <h6>Full time • Camarin, Caloocan</h6>
+            <h3>We are looking for an innovative and passionate teacher...</h3>
+        </a>
+        <a class="openBtn" data-target="panel2">
+            <h2>Marketing Specialist</h2>
+            <h6>Full time • Camarin, Caloocan</h6>
+            <h3>SVFC seeks a creative Marketing Specialist...</h3>
+        </a>
+
+  <!-- Panel 1 -->
+        <div id="panel1" class="side-panel">
+            <button class="close-btn">&times;</button>
+            <h2>Alternative Learning Support Teacher</h2>
+            <h5>Full time • Camarin, Caloocan</h5>
+            <br>
+            <p>
+                We are looking for an innovative and passionate Alternative Learning Support Teacher to join our community.
+            </p>
+            <br>
+            <ul>
+                <li>Bachelor’s in Psychology, SPED, or Counseling</li>
+                <li>Valid teaching license</li>
+                <li>Ability to support student wellness</li>
+                <li>Flexible and adaptive teaching methods</li>
+            </ul>
+
+            <!-- registration form -->
+            <a class="register-button">Apply Now</a>
+
+            <div class="formOverlay overlay">
+                <div class="registration-form">
+                    <button class="close-button">&times;</button>
+                    <h2>Register</h2>
+                    <form class="regForm">
+                        <label for="name">Full Name:</label>
+                        <input type="text" name="name" required />
+                
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" required />
+                
+                        <label for="age">Age:</label>
+                        <input type="text" name="age" required />
+                
+                        <label for="num">Phone Number:</label>
+                        <input type="text" name="num" required />
+                
+                        <button type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div id="panel2" class="side-panel">
+            <button class="close-btn">&times;</button>
+            <h2>Marketing Specialist</h2>
+            <h5>Full time • Camarin, Caloocan</h5>
+            <br>
+            <p>
+                SVFC seeks a dedicated Marketing Specialist to provide creativity and organizational skills.
+            </p>
+            <br>
+            <ul>
+                <li>Candidate must possess at least a Bachelor's Degree in Marketing or Business.</li>
+                <li>Dynamic, hardworking, and a team player</li>
+                <li>Has good oral and written communication and interpersonal skills</li>
+                <li>Possesses analytical, creativity, and organizational skills</li>
+            </ul>
+
+            <!-- registration form -->
+            <a class="register-button">Apply Now</a>
+
+            <div class="formOverlay overlay">
+                <div class="registration-form">
+                    <button class="close-button">&times;</button>
+                    <h2>Register</h2>
+                    <form class="regForm">
+                        <label for="name">Full Name:</label>
+                        <input type="text" name="name" required />
+                
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" required />
+                
+                        <label for="age">Age:</label>
+                        <input type="text" name="age" required />
+                
+                        <label for="num">Phone Number:</label>
+                        <input type="text" name="num" required />
+                
+                        <button type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="copyright">
@@ -77,5 +181,7 @@
     </footer>
 
     <script src="../SCRIPTS/carrousel.js"></script>
+    <script src="../SCRIPTS/jobs.js"></script>
+    <script src="../SCRIPTS/registration.js"></script>
 </body>
 </html>
